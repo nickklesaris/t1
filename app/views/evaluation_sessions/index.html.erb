@@ -1,0 +1,21 @@
+<h1> Evaluation Sessions </h1>
+<table>
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th> Description </th>
+      <th> Item type </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @evaluation_sessions.each do |e| %>
+    <tr>
+      <td><%= e.name %></td>
+      <td><%= e.description %> </td>
+      <td><%= e.item_type %> </td>
+    </tr>
+    <br>
+    <% end %>
+  </tbody>
+</table>

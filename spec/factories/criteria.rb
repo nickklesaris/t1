@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :criterion do
-    name "MyString"
-    description "MyText"
+    name "generic criterion"
+    description "This is the description of the criterion"
   end
 end
