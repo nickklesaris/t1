@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :rating do
-    grouping "MyString"
-    rank 1
+    grouping "good"
+    rank 3
     score 1.5
   end
 end

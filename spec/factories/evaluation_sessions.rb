@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :evaluation_session do
-    name "MyString"
-    description "MyText"
-    item_type "MyString"
+    name "This evaluation session"
+    description "Evaluating some stuff"
+    item_type "apartment"
   end
 end

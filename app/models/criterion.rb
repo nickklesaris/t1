@@ -1,2 +1,3 @@
 class Criterion < ActiveRecord::Base
-end
+  validates :name, presence: true
+  end
