@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416222433) do
+ActiveRecord::Schema.define(version: 20140424213647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "criteria", force: true do |t|
-    t.string   "name",                  null: false
+    t.string   "name",                              null: false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rank_among_criteria",   null: false
-    t.integer  "evaluation_session_id", null: false
+    t.integer  "rank_among_criteria",   default: 0, null: false
+    t.integer  "evaluation_session_id",             null: false
   end
 
   add_index "criteria", ["evaluation_session_id"], name: "index_criteria_on_evaluation_session_id", using: :btree

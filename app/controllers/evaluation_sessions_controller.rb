@@ -10,12 +10,18 @@ class EvaluationSessionsController < ApplicationController
   def create
     @evaluation_session = EvaluationSession.new(evaluation_session_params)
       if @evaluation_session.save
-        redirect_to new_criterion_path
+        redirect_to evaluation_sessions_path
         flash[:notice] = "Evaluation session created."
       else
         render 'new'
         flash[:notice] = "Evaluation session not created. Please correct errors."
       end
+  end
+
+  def show
+    @evaluation_session = EvaluationSession.find(params[:id])
+    @criterion = Criterion.new
+    @criteria = @evaluation_session.criteria
   end
 
   private

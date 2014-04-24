@@ -1,0 +1,33 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Item type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @evaluation_session.name %></td>
+      <td><%= @evaluation_session.description %></td>
+      <td><%= @evaluation_session.item_type %></td>
+    </tr>
+  </tbody>
+</table>
+<% # if this evaluation_session has criteria associated with it, display the following table %>
+<table>
+  <thead>
+    <tr>
+      <th>Criterion name</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @criteria.each do |criterion| %>
+    <tr>
+      <td><%= criterion.name %></td>
+      <td><%= criterion.description %></td>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to "Add criterion", new_evaluation_session_criterion_path(@evaluation_session), class: 'button' %>

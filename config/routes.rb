@@ -1,6 +1,8 @@
 T1::Application.routes.draw do
-  resources :evaluation_sessions, only: [:new, :create, :index]
-  resources :criteria, only: [:new, :create, :index]
+  resources :evaluation_sessions, only: [:new, :create, :index, :show]
+  resources :evaluation_sessions do
+    resources :criteria, only: [:new, :create, :index]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -16,7 +16,12 @@
       <%= content_tag :div, msg, class: name %>
     <% end -%>
 
-    <%= yield %>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= yield %>
+      </div>
+    </div>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
