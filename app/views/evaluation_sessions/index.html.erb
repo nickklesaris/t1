@@ -9,13 +9,15 @@
   </thead>
 
   <tbody>
-    <% @evaluation_sessions.each do |e| %>
+    <% @evaluation_sessions.each do |es| %>
     <tr>
-      <td><%= e.name %></td>
-      <td><%= e.description %> </td>
-      <td><%= e.item_type %> </td>
+      <td><%= link_to es.name, evaluation_session_path(es) %></td>
+      <td><%= es.description %> </td>
+      <td><%= es.item_type %> </td>
     </tr>
     <br>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to "Create new evaluation session", new_evaluation_session_path, class: 'button' %>

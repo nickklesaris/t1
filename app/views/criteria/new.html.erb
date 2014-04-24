@@ -1,5 +1,6 @@
-<%= simple_form_for @criterion do |c| %>
+<%= simple_form_for [@evaluation_session, @criterion] do |c| %>
   <%= c.input :name %>
   <%= c.input :description %>
-  <%= c.submit %>
+  <%= c.input :rank_among_criteria %>
+  <%= c.button :submit %>
 <% end %>
