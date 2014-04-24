@@ -13,7 +13,7 @@ class CriteriaController < ApplicationController
     @evaluation_session = EvaluationSession.find(params[:evaluation_session_id])
     @criterion = @evaluation_session.criteria.build(criterion_params)
       if @criterion.save
-        redirect_to 'criteria/new'
+        redirect_to new_evaluation_session_criterion_path
         flash[:notice] = "Criterion created."
       else
         render 'new'

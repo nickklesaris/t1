@@ -1,3 +1,4 @@
 class Criterion < ActiveRecord::Base
-  validates :name, presence: true
-  end
+  belongs_to :evaluation_session
+  validates :name, presence: true, uniqueness: {scope: :evaluation_session_id}
+end
