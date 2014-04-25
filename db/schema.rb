@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424213647) do
+ActiveRecord::Schema.define(version: 20140425014844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 20140424213647) do
   add_index "items", ["evaluation_session_id"], name: "index_items_on_evaluation_session_id", using: :btree
 
   create_table "ratings", force: true do |t|
-    t.string   "grouping",     null: false
-    t.integer  "rank",         null: false
-    t.float    "score",        null: false
+    t.string   "grouping"
+    t.integer  "rank"
+    t.float    "score"
     t.integer  "item_id",      null: false
     t.integer  "criterion_id", null: false
     t.datetime "created_at"

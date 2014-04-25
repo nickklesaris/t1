@@ -1,0 +1,6 @@
+<%= simple_form_for @item do |item| %>
+<% evaluation_session.items.each do |item| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
