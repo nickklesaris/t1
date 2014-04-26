@@ -30,9 +30,10 @@
       <td><%= item.name %></td>
       <% @criteria.each do |criteria| %>
         <td>
-          <%= simple_form_for [@item, @rating] do |f| %>
+          <%= simple_form_for [item, item.ratings.build] do |f| %>
             <%= f.association :criterion, as: :hidden, value: item %>
             <%= f.input :grouping %>
+            <%= f.button :submit %>
           <% end %>
         </td>
       <% end %>
