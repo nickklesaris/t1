@@ -18,15 +18,26 @@
 <table>
   <thead>
     <tr>
-      <th>Criterion name</th>
-      <th>description</th>
+      <th> <%= @evaluation_session.item_type %> </th>
+      <% @criteria.each do |criterion| %>
+        <th><%= criterion.name %></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
-  <% @criteria.each do |criterion| %>
+  <% @items.each do |item| %>
     <tr>
-      <td><%= criterion.name %></td>
-      <td><%= criterion.description %></td>
+      <td><%= item.name %></td>
+      <% @criteria.each do |criteria| %>
+        <td>
+          <%= simple_form_for [item, item.ratings.build] do |f| %>
+            <%= f.association :criterion, as: :hidden, value: item %>
+            <%= f.input :grouping %>
+            <%= f.button :submit %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
   <% end %>
   </tbody>
 </table>

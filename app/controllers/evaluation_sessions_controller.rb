@@ -21,7 +21,9 @@ class EvaluationSessionsController < ApplicationController
   def show
     @evaluation_session = EvaluationSession.find(params[:id])
     @criterion = Criterion.new
+    @item = Item.new
     @criteria = @evaluation_session.criteria
+    @items = @evaluation_session.items
   end
 
   private
